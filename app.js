@@ -21,3 +21,8 @@ app.get('/', (req, res)=>{
 app.get('/get_messages', (req, res)=>{
     res.send(secret)
 })
+
+app.post('/set_message', urlencodedParser, (req, res)=>{
+    secret = req.body.msg
+    res.end()
+})
